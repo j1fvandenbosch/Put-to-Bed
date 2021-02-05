@@ -1,0 +1,38 @@
+
+// CODE for movement detection
+
+
+
+// PIR related values
+// PIR output connected to pin ? (can be any digital/analog IO pin)
+#define PIR 2
+
+
+
+// To what pin is the PIR movement-detected LED connected
+#define PIR_LED 8
+
+
+
+void setup()
+	// Show what the PIR is doing (on=PIR detected movement)
+	pinMode(PIR, INPUT_PULLUP);
+	pinMode(PIR_LED, OUTPUT);
+	digitalWrite(PIR_LED, LOW);
+
+
+
+void loop()
+
+	// New function: Set the PIR led to show if movement detected
+	if (digitalRead(PIR)) {
+		display.shutdown(false);
+		displayOnTime = millis();
+		digitalWrite(PIR_LED, HIGH);
+	}
+	else {
+		digitalWrite(PIR_LED, LOW);
+		if (millis() > displayOnTime + displayMinOnTime) {
+			display.shutdown(true);
+		}
+	}

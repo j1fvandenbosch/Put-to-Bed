@@ -1,0 +1,23 @@
+
+// CODE for use on how to set up the message
+
+	// -----------------------------------------------------------------------------------------------
+	// How to use the extended character set (see http://www.gammon.com.au/forum/?id=11516 "Font" area)
+	// -----------------------------------------------------------------------------------------------
+
+	// Create your string (in whichever function you require, we'll do it here in the setup as a demo)
+	String msg = "Milton Keynes 12";
+
+	// This character is the degree symbol (small circle in top half of character space)
+	msg += (char) 0xF8;
+
+	// Now we just add more to the message as you want
+	msg += "C, Humidity 24";
+	msg += (char) 0xAb; // 1/2 symbol
+
+	// Continue the message
+	msg += " (low) so we are ";
+	msg += (char) 0x01; // happy face symbol
+
+	// Convert the entire string to a character array for sending to LED
+	msg.toCharArray((char*)message, 100);
