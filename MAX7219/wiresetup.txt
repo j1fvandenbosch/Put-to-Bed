@@ -1,9 +1,0 @@
-
-// SPI HARDWARE wiring
-
-
-Arduino Uno/Nano  
-Pin 13 - goes to MAX7219 4-in-1 display pin CLK (Clock)  
-Pin 12 - not used
-Pin 11 - goes to MAX7219 4-in-1 display pin DIN (Data in)  
-Pin 10 - goes to MAX7219 4-in-1 display pin CS (Chip select)  
